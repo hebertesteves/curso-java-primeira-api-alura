@@ -8,7 +8,6 @@ import br.com.alura.screenmatch.repository.SerieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -76,4 +75,21 @@ public class SerieService {
 
         return null;
     }
+
+    public List<EpisodioDTO> obterTemporadasPorNumero(Long id, Integer numero) {
+        Optional<Serie> serie = serieRepository.findById(id);
+
+        if (serie.isPresent()) {
+            List<Episodio> episodio = serie.get().getEpisodios();
+
+            return episodio
+                    .stream()
+                    .filter(e -> e.getTemporada() == numero)
+                    .map(e -> new EpisodioDTO(e.getTemporada(), e.getTitulo(), e.getNumeroEpisodio()))
+                    .collect(Collectors.toList());
+        }
+
+        return null;
+    }
+
 }

@@ -40,4 +40,8 @@ public class SerieController {
         return serieService.obterTemporada(id);
     }
 
+    @GetMapping("/{id}/temporadas/{numero}")
+    public List<EpisodioDTO> obterTemporadasPorNumero(@PathVariable Long id, @PathVariable Integer numero) {
+        return serieService.obterTemporadasPorNumero(id, numero);
+    }
 }
