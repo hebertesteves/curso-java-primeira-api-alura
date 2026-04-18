@@ -76,20 +76,11 @@ public class SerieService {
         return null;
     }
 
-    public List<EpisodioDTO> obterTemporadasPorNumero(Long id, Integer numero) {
-        Optional<Serie> serie = serieRepository.findById(id);
-
-        if (serie.isPresent()) {
-            List<Episodio> episodio = serie.get().getEpisodios();
-
-            return episodio
-                    .stream()
-                    .filter(e -> e.getTemporada() == numero)
-                    .map(e -> new EpisodioDTO(e.getTemporada(), e.getTitulo(), e.getNumeroEpisodio()))
-                    .collect(Collectors.toList());
-        }
-
-        return null;
+    public List<EpisodioDTO> obterTemporadasPorNumero(Long id, Long numero) {
+        return serieRepository.obterEpisodiosPorTemporada(id, numero)
+                .stream()
+                .map(e -> new EpisodioDTO(e.getTemporada(), e.getTitulo(), e.getNumeroEpisodio()))
+                .collect(Collectors.toList());
     }
 
 }
