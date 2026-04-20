@@ -1,12 +1,10 @@
-package hebertesteves.ScreenmatchFrases.entity;
+package hebertesteves.ScreenmatchFrases.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
-public class Frases {
+@Table(name = "frases")
+public class Frase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,10 +14,10 @@ public class Frases {
     private String titulo;
     private String poster;
 
-    public Frases() {
+    public Frase() {
     }
 
-    public Frases(String frase, String personagem, String titulo, String poster) {
+    public Frase(String frase, String personagem, String titulo, String poster) {
         this.frase = frase;
         this.personagem = personagem;
         this.titulo = titulo;

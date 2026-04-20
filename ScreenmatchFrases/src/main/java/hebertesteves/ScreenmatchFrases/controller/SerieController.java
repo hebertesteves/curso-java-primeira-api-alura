@@ -1,7 +1,7 @@
 package hebertesteves.ScreenmatchFrases.controller;
 
-import hebertesteves.ScreenmatchFrases.entity.FrasesDTO;
-import hebertesteves.ScreenmatchFrases.service.FrasesService;
+import hebertesteves.ScreenmatchFrases.dto.FraseDTO;
+import hebertesteves.ScreenmatchFrases.service.FraseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class SerieController {
 
     @Autowired
-    private FrasesService frasesService;
+    private FraseService fraseService;
 
     @GetMapping("/frases")
-    public FrasesDTO obterFrase() {
-        return frasesService.obterFrase();
+    public FraseDTO obterFrase() {
+        return fraseService.obterFrase();
     }
 }
