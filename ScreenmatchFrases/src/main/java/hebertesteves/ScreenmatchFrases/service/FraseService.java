@@ -15,7 +15,7 @@ public class FraseService {
     @Autowired
     private FraseRepository fraseRepository;
 
-    public FraseDTO obterFrase() {
+    public FraseDTO obterFraseAleatoria() {
         Integer total = fraseRepository.findAll().size();
 
         Optional<Frase> frase = fraseRepository.findById(obterIdAleatorio(total));
