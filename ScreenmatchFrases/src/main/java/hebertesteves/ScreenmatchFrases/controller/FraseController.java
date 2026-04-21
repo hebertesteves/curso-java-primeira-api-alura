@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/series")
-public class SerieController {
+public class FraseController {
 
     @Autowired
     private FraseService fraseService;
 
-    @GetMapping("/frases")
+    @GetMapping("/series/frases")
     public FraseDTO obterFrase() {
         return fraseService.obterFrase();
     }
