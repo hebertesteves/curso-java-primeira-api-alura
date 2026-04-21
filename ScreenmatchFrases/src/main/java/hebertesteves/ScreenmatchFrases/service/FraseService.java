@@ -16,16 +16,7 @@ public class FraseService {
     private FraseRepository fraseRepository;
 
     public FraseDTO obterFraseAleatoria() {
-        Integer total = fraseRepository.findAll().size();
-
-        Optional<Frase> frase = fraseRepository.findById(obterIdAleatorio(total));
-
-        return frase.map(this::converteFraseParaFraseDTO).orElse(null);
-    }
-
-    private Long obterIdAleatorio(Integer total) {
-        Random random = new Random();
-        return (long) random.nextInt(total) + 1;
+        return converteFraseParaFraseDTO(fraseRepository.buscaFraseAleatoria());
     }
 
     private FraseDTO converteFraseParaFraseDTO(Frase frase) {
