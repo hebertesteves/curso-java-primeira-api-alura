@@ -36,7 +36,7 @@ Durante o curso, foram estudados os seguintes tópicos:
 
 - **Curso:** Java: criando a primeira API e conectando ao Front-end  
 - **Plataforma:** Alura  
-- **Carga horária:** 10 horas
+- **Carga horária:** 10h
 
 📎 **Certificado:** [Acessar certificado](https://cursos.alura.com.br/user/hebert-esteves/course/java-criando-primeira-api-conectando-front/certificate)
 
